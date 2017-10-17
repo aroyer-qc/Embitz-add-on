@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resource>
+	<object class="wxPanel" name="INTERFACE_PANEL_ROOT">
+		<size>251,321</size>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<object class="wxNotebook" name="nbMain">
+					<object class="notebookpage">
+						<object class="wxPanel" name="ID_PANEL3">
+							<object class="wxBoxSizer">
+								<orient>wxVERTICAL</orient>
+								<object class="sizeritem">
+									<object class="wxBoxSizer">
+										<orient>wxVERTICAL</orient>
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_STATICTEXT4">
+												<label>Device:</label>
+											</object>
+											<flag>wxTOP|wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxComboBox" name="ID_DEVICE">
+												<content>
+													<item>SPEAr300</item>
+													<item>SPEAr310</item>
+													<item>SPEAr320</item>
+													<item>SPEAr600</item>
+													<item>STM32F030F4</item>
+													<item>STM32F030F4(allowopt.bytes)</item>
+													<item>STM32F030C6</item>
+													<item>STM32F030C6(allowopt.bytes)</item>
+													<item>STM32F030C8</item>
+													<item>STM32F030C8(allowopt.bytes)</item>
+													<item>STM32F030K6</item>
+													<item>STM32F030K6(allowopt.bytes)</item>
+													<item>STM32F030R8</item>
+													<item>STM32F030R8(allowopt.bytes)</item>
+													<item>STM32F050C4</item>
+													<item>STM32F050C4(allowopt.bytes)</item>
+													<item>STM32F050C6</item>
+													<item>STM32F050C6(allowopt.bytes)</item>
+													<item>STM32F050F4</item>
+													<item>STM32F050F4(allowopt.bytes)</item>
+													<item>STM32F050F6</item>
+													<item>STM32F050F6(allowopt.bytes)</item>
+													<item>STM32F050G4</item>
+													<item>STM32F050G4(allowopt.bytes)</item>
+													<item>STM32F050G6</item>
+													<item>STM32F050G6(allowopt.bytes)</item>
+													<item>STM32F050K4</item>
+													<item>STM32F050K4(allowopt.bytes)</item>
+													<item>STM32F050K6</item>
+													<item>STM32F050K6(allowopt.bytes)</item>
+													<item>STM32F051C4</item>
+													<item>STM32F051C4(allowopt.bytes)</item>
+													<item>STM32F051C6</item>
+													<item>STM32F051C6(allowopt.bytes)</item>
+													<item>STM32F051C8</item>
+													<item>STM32F051C8(allowopt.bytes)</item>
+													<item>STM32F051K4</item>
+													<item>STM32F051K4(allowopt.bytes)</item>
+													<item>STM32F051K6</item>
+													<item>STM32F051K6(allowopt.bytes)</item>
+													<item>STM32F051K8</item>
+													<item>STM32F051K8(allowopt.bytes)</item>
+													<item>STM32F051R4</item>
+													<item>STM32F051R4(allowopt.bytes)</item>
+													<item>STM32F051R6</item>
+													<item>STM32F051R6(allowopt.bytes)</item>
+													<item>STM32F051R8</item>
+													<item>STM32F051R8(allowopt.bytes)</item>
+													<item>STM32F052C8</item>
+													<item>STM32F052C8(allowopt.bytes)</item>
+													<item>STM32F052CB</item>
+													<item>STM32F052CB(allowopt.bytes)</item>
+													<item>STM32F052R8</item>
+													<item>STM32F052R8(allowopt.bytes)</item>
+													<item>STM32F052RB</item>
+													<item>STM32F052RB(allowopt.bytes)</item>
+													<item>STM32F052V8</item>
+													<item>STM32F052V8(allowopt.bytes)</item>
+													<item>STM32F052VB</item>
+													<item>STM32F052VB(allowopt.bytes)</item>
+                                                    <item>STM32F091CB</item>
+													<item>STM32F091CB(allowopt.bytes)</item>
+													<item>STM32F091CC</item>
+													<item>STM32F091CC(allowopt.bytes)</item>
+													<item>STM32F091RB</item>
+													<item>STM32F091RB(allowopt.bytes)</item>
+													<item>STM32F091RC</item>
+													<item>STM32F091RC(allowopt.bytes)</item>
+													<item>STM32F091VB</item>
+													<item>STM32F091VB(allowopt.bytes)</item>
+													<item>STM32F091VC</item>
+													<item>STM32F091VC(allowopt.bytes)</item>
+                                                    <item>STM32F100C4</item>
+													<item>STM32F100C4(allowopt.bytes)</item>
+													<item>STM32F100C6</item>
+													<item>STM32F100C6(allowopt.bytes)</item>
+													<item>STM32F100C8</item>
+													<item>STM32F100C8(allowopt.bytes)</item>
+													<item>STM32F100CB</item>
+													<item>STM32F100CB(allowopt.bytes)</item>
+													<item>STM32F100R4</item>
+													<item>STM32F100R4(allowopt.bytes)</item>
+													<item>STM32F100R6</item>
+													<item>STM32F100R6(allowopt.bytes)</item>
+													<item>STM32F100R8</item>
+													<item>STM32F100R8(allowopt.bytes)</item>
+													<item>STM32F100RB</item>
+													<item>STM32F100RB(allowopt.bytes)</item>
+													<item>STM32F100RC</item>
+													<item>STM32F100RC(allowopt.bytes)</item>
+													<item>STM32F100RD</item>
+													<item>STM32F100RD(allowopt.bytes)</item>
+													<item>STM32F100RE</item>
+													<item>STM32F100RE(allowopt.bytes)</item>
+													<item>STM32F100V8</item>
+													<item>STM32F100V8(allowopt.bytes)</item>
+													<item>STM32F100VB</item>
+													<item>STM32F100VB(allowopt.bytes)</item>
+													<item>STM32F100VC</item>
+													<item>STM32F100VC(allowopt.bytes)</item>
+													<item>STM32F100VD</item>
+													<item>STM32F100VD(allowopt.bytes)</item>
+													<item>STM32F100VE</item>
+													<item>STM32F100VE(allowopt.bytes)</item>
+													<item>STM32F100ZC</item>
+													<item>STM32F100ZC(allowopt.bytes)</item>
+													<item>STM32F100ZD</item>
+													<item>STM32F100ZD(allowopt.bytes)</item>
+													<item>STM32F100ZE</item>
+													<item>STM32F100ZE(allowopt.bytes)</item>
+													<item>STM32F101C4</item>
+													<item>STM32F101C4(allowopt.bytes)</item>
+													<item>STM32F101C6</item>
+													<item>STM32F101C6(allowopt.bytes)</item>
+													<item>STM32F101C8</item>
+													<item>STM32F101C8(allowopt.bytes)</item>
+													<item>STM32F101CB</item>
+													<item>STM32F101CB(allowopt.bytes)</item>
+													<item>STM32F101R4</item>
+													<item>STM32F101R4(allowopt.bytes)</item>
+													<item>STM32F101R6</item>
+													<item>STM32F101R6(allowopt.bytes)</item>
+													<item>STM32F101R8</item>
+													<item>STM32F101R8(allowopt.bytes)</item>
+													<item>STM32F101RB</item>
+													<item>STM32F101RB(allowopt.bytes)</item>
+													<item>STM32F101RC</item>
+													<item>STM32F101RC(allowopt.bytes)</item>
+													<item>STM32F101RD</item>
+													<item>STM32F101RD(allowopt.bytes)</item>
+													<item>STM32F101RE</item>
+													<item>STM32F101RE(allowopt.bytes)</item>
+													<item>STM32F101RF</item>
+													<item>STM32F101RF(allowopt.bytes)</item>
+													<item>STM32F101RG</item>
+													<item>STM32F101RG(allowopt.bytes)</item>
+													<item>STM32F101T4</item>
+													<item>STM32F101T4(allowopt.bytes)</item>
+													<item>STM32F101T6</item>
+													<item>STM32F101T6(allowopt.bytes)</item>
+													<item>STM32F101T8</item>
+													<item>STM32F101T8(allowopt.bytes)</item>
+													<item>STM32F101V8</item>
+													<item>STM32F101V8(allowopt.bytes)</item>
+													<item>STM32F101VB</item>
+													<item>STM32F101VB(allowopt.bytes)</item>
+													<item>STM32F101VC</item>
+													<item>STM32F101VC(allowopt.bytes)</item>
+													<item>STM32F101VD</item>
+													<item>STM32F101VD(allowopt.bytes)</item>
+													<item>STM32F101VE</item>
+													<item>STM32F101VE(allowopt.bytes)</item>
+													<item>STM32F101VF</item>
+													<item>STM32F101VF(allowopt.bytes)</item>
+													<item>STM32F101VG</item>
+													<item>STM32F101VG(allowopt.bytes)</item>
+													<item>STM32F101ZC</item>
+													<item>STM32F101ZC(allowopt.bytes)</item>
+													<item>STM32F101ZD</item>
+													<item>STM32F101ZD(allowopt.bytes)</item>
+													<item>STM32F101ZE</item>
+													<item>STM32F101ZE(allowopt.bytes)</item>
+													<item>STM32F101ZF</item>
+													<item>STM32F101ZF(allowopt.bytes)</item>
+													<item>STM32F101ZG</item>
+													<item>STM32F101ZG(allowopt.bytes)</item>
+													<item>STM32F102C4</item>
+													<item>STM32F102C4(allowopt.bytes)</item>
+													<item>STM32F102C6</item>
+													<item>STM32F102C6(allowopt.bytes)</item>
+													<item>STM32F102C8</item>
+													<item>STM32F102C8(allowopt.bytes)</item>
+													<item>STM32F102CB</item>
+													<item>STM32F102CB(allowopt.bytes)</item>
+													<item>STM32F102R4</item>
+													<item>STM32F102R4(allowopt.bytes)</item>
+													<item>STM32F102R6</item>
+													<item>STM32F102R6(allowopt.bytes)</item>
+													<item>STM32F102R8</item>
+													<item>STM32F102R8(allowopt.bytes)</item>
+													<item>STM32F102RB</item>
+													<item>STM32F102RB(allowopt.bytes)</item>
+													<item>STM32F103C4</item>
+													<item>STM32F103C4(allowopt.bytes)</item>
+													<item>STM32F103C6</item>
+													<item>STM32F103C6(allowopt.bytes)</item>
+													<item>STM32F103C8</item>
+													<item>STM32F103C8(allowopt.bytes)</item>
+													<item>STM32F103CB</item>
+													<item>STM32F103CB(allowopt.bytes)</item>
+													<item>STM32F103R4</item>
+													<item>STM32F103R4(allowopt.bytes)</item>
+													<item>STM32F103R6</item>
+													<item>STM32F103R6(allowopt.bytes)</item>
+													<item>STM32F103R8</item>
+													<item>STM32F103R8(allowopt.bytes)</item>
+													<item>STM32F103RB</item>
+													<item>STM32F103RB(allowopt.bytes)</item>
+													<item>STM32F103RC</item>
+													<item>STM32F103RC(allowopt.bytes)</item>
+													<item>STM32F103RD</item>
+													<item>STM32F103RD(allowopt.bytes)</item>
+													<item>STM32F103RE</item>
+													<item>STM32F103RE(allowopt.bytes)</item>
+													<item>STM32F103RF</item>
+													<item>STM32F103RF(allowopt.bytes)</item>
+													<item>STM32F103RG</item>
+													<item>STM32F103RG(allowopt.bytes)</item>
+													<item>STM32F103T4</item>
+													<item>STM32F103T4(allowopt.bytes)</item>
+													<item>STM32F103T6</item>
+													<item>STM32F103T6(allowopt.bytes)</item>
+													<item>STM32F103T8</item>
+													<item>STM32F103T8(allowopt.bytes)</item>
+													<item>STM32F103V8</item>
+													<item>STM32F103V8(allowopt.bytes)</item>
+													<item>STM32F103VB</item>
+													<item>STM32F103VB(allowopt.bytes)</item>
+													<item>STM32F103VC</item>
+													<item>STM32F103VC(allowopt.bytes)</item>
+													<item>STM32F103VD</item>
+													<item>STM32F103VD(allowopt.bytes)</item>
+													<item>STM32F103VE</item>
+													<item>STM32F103VE(allowopt.bytes)</item>
+													<item>STM32F103VF</item>
+													<item>STM32F103VF(allowopt.bytes)</item>
+													<item>STM32F103VG</item>
+													<item>STM32F103VG(allowopt.bytes)</item>
+													<item>STM32F103ZC</item>
+													<item>STM32F103ZC(allowopt.bytes)</item>
+													<item>STM32F103ZD</item>
+													<item>STM32F103ZD(allowopt.bytes)</item>
+													<item>STM32F103ZE</item>
+													<item>STM32F103ZE(allowopt.bytes)</item>
+													<item>STM32F103ZF</item>
+													<item>STM32F103ZF(allowopt.bytes)</item>
+													<item>STM32F103ZG</item>
+													<item>STM32F103ZG(allowopt.bytes)</item>
+													<item>STM32F105R8</item>
+													<item>STM32F105R8(allowopt.bytes)</item>
+													<item>STM32F105RB</item>
+													<item>STM32F105RB(allowopt.bytes)</item>
+													<item>STM32F105RC</item>
+													<item>STM32F105RC(allowopt.bytes)</item>
+													<item>STM32F105V8</item>
+													<item>STM32F105V8(allowopt.bytes)</item>
+													<item>STM32F105VB</item>
+													<item>STM32F105VB(allowopt.bytes)</item>
+													<item>STM32F105VC</item>
+													<item>STM32F105VC(allowopt.bytes)</item>
+													<item>STM32F107RB</item>
+													<item>STM32F107RB(allowopt.bytes)</item>
+													<item>STM32F107RC</item>
+													<item>STM32F107RC(allowopt.bytes)</item>
+													<item>STM32F107VB</item>
+													<item>STM32F107VB(allowopt.bytes)</item>
+													<item>STM32F107VC</item>
+													<item>STM32F107VC(allowopt.bytes)</item>
+													<item>STM32F205RB</item>
+													<item>STM32F205RC</item>
+													<item>STM32F205RE</item>
+													<item>STM32F205RF</item>
+													<item>STM32F205RG</item>
+													<item>STM32F205VB</item>
+													<item>STM32F205VC</item>
+													<item>STM32F205VE</item>
+													<item>STM32F205VF</item>
+													<item>STM32F205VG</item>
+													<item>STM32F205ZC</item>
+													<item>STM32F205ZE</item>
+													<item>STM32F205ZF</item>
+													<item>STM32F205ZG</item>
+													<item>STM32F207IC</item>
+													<item>STM32F207IE</item>
+													<item>STM32F207IF</item>
+													<item>STM32F207IG</item>
+													<item>STM32F207VC</item>
+													<item>STM32F207VE</item>
+													<item>STM32F207VF</item>
+													<item>STM32F207VG</item>
+													<item>STM32F207ZC</item>
+													<item>STM32F207ZE</item>
+													<item>STM32F207ZF</item>
+													<item>STM32F207ZG</item>
+													<item>STM32F215RE</item>
+													<item>STM32F215RG</item>
+													<item>STM32F215VE</item>
+													<item>STM32F215VG</item>
+													<item>STM32F215ZE</item>
+													<item>STM32F215ZG</item>
+													<item>STM32F217IE</item>
+													<item>STM32F217IG</item>
+													<item>STM32F217VE</item>
+													<item>STM32F217VG</item>
+													<item>STM32F217ZE</item>
+													<item>STM32F217ZG</item>
+													<item>STM32F302CB</item>
+													<item>STM32F302CB(allowopt.bytes)</item>
+													<item>STM32F302CC</item>
+													<item>STM32F302CC(allowopt.bytes)</item>
+													<item>STM32F302RB</item>
+													<item>STM32F302RB(allowopt.bytes)</item>
+													<item>STM32F302RC</item>
+													<item>STM32F302RC(allowopt.bytes)</item>
+													<item>STM32F302VB</item>
+													<item>STM32F302VB(allowopt.bytes)</item>
+													<item>STM32F302VC</item>
+													<item>STM32F302VC(allowopt.bytes)</item>
+													<item>STM32F303CB</item>
+													<item>STM32F303CB(allowopt.bytes)</item>
+													<item>STM32F303CC</item>
+													<item>STM32F303CC(allowopt.bytes)</item>
+													<item>STM32F303RB</item>
+													<item>STM32F303RB(allowopt.bytes)</item>
+													<item>STM32F303RC</item>
+													<item>STM32F303RC(allowopt.bytes)</item>
+													<item>STM32F303VB</item>
+													<item>STM32F303VB(allowopt.bytes)</item>
+													<item>STM32F303VC</item>
+													<item>STM32F303VC(allowopt.bytes)</item>
+													<item>STM32F372C8</item>
+													<item>STM32F372C8(allowopt.bytes)</item>
+													<item>STM32F372CB</item>
+													<item>STM32F372CB(allowopt.bytes)</item>
+													<item>STM32F372CC</item>
+													<item>STM32F372CC(allowopt.bytes)</item>
+													<item>STM32F372R8</item>
+													<item>STM32F372R8(allowopt.bytes)</item>
+													<item>STM32F372RB</item>
+													<item>STM32F372RB(allowopt.bytes)</item>
+													<item>STM32F372RC</item>
+													<item>STM32F372RC(allowopt.bytes)</item>
+													<item>STM32F372V8</item>
+													<item>STM32F372V8(allowopt.bytes)</item>
+													<item>STM32F372VB</item>
+													<item>STM32F372VB(allowopt.bytes)</item>
+													<item>STM32F372VC</item>
+													<item>STM32F372VC(allowopt.bytes)</item>
+													<item>STM32F373C8</item>
+													<item>STM32F373C8(allowopt.bytes)</item>
+													<item>STM32F373CB</item>
+													<item>STM32F373CB(allowopt.bytes)</item>
+													<item>STM32F373CC</item>
+													<item>STM32F373CC(allowopt.bytes)</item>
+													<item>STM32F373R8</item>
+													<item>STM32F373R8(allowopt.bytes)</item>
+													<item>STM32F373RB</item>
+													<item>STM32F373RB(allowopt.bytes)</item>
+													<item>STM32F373RC</item>
+													<item>STM32F373RC(allowopt.bytes)</item>
+													<item>STM32F373V8</item>
+													<item>STM32F373V8(allowopt.bytes)</item>
+													<item>STM32F373VB</item>
+													<item>STM32F373VB(allowopt.bytes)</item>
+													<item>STM32F373VC</item>
+													<item>STM32F373VC(allowopt.bytes)</item>
+													<item>STM32F405OE</item>
+													<item>STM32F405OG</item>
+													<item>STM32F405RG</item>
+													<item>STM32F405VG</item>
+													<item>STM32F405ZG</item>
+													<item>STM32F407IE</item>
+													<item>STM32F407IG</item>
+													<item>STM32F407VE</item>
+													<item>STM32F407VG</item>
+													<item>STM32F407ZE</item>
+													<item>STM32F407ZG</item>
+													<item>STM32F415OG</item>
+													<item>STM32F415RG</item>
+													<item>STM32F415VG</item>
+													<item>STM32F415ZG</item>
+													<item>STM32F417IE</item>
+													<item>STM32F417IG</item>
+													<item>STM32F417VE</item>
+													<item>STM32F417VG</item>
+													<item>STM32F417ZE</item>
+													<item>STM32F417ZG</item>
+													<item>STM32F427IG</item>
+													<item>STM32F427II</item>
+													<item>STM32F427VG</item>
+													<item>STM32F427VI</item>
+													<item>STM32F427ZG</item>
+													<item>STM32F427ZI</item>
+													<item>STM32F429BG</item>
+													<item>STM32F429BI</item>
+													<item>STM32F429IG</item>
+													<item>STM32F429II</item>
+													<item>STM32F429NG</item>
+													<item>STM32F429NI</item>
+													<item>STM32F429VG</item>
+													<item>STM32F429VI</item>
+													<item>STM32F429ZG</item>
+													<item>STM32F429ZI</item>
+													<item>STM32F437IG</item>
+													<item>STM32F437II</item>
+													<item>STM32F437VG</item>
+													<item>STM32F437VI</item>
+													<item>STM32F437ZG</item>
+													<item>STM32F437ZI</item>
+													<item>STM32F439BG</item>
+													<item>STM32F439BI</item>
+													<item>STM32F439IG</item>
+													<item>STM32F439II</item>
+													<item>STM32F439NG</item>
+													<item>STM32F439NI</item>
+													<item>STM32F439VG</item>
+													<item>STM32F439VI</item>
+													<item>STM32F439ZG</item>
+													<item>STM32F439ZI</item>
+													<item>STM32L151C6</item>
+													<item>STM32L151C8</item>
+													<item>STM32L151CB</item>
+													<item>STM32L151QC</item>
+													<item>STM32L151QD</item>
+													<item>STM32L151R6</item>
+													<item>STM32L151R8</item>
+													<item>STM32L151RC</item>
+													<item>STM32L151RD</item>
+													<item>STM32L151RB</item>
+													<item>STM32L151V8</item>
+													<item>STM32L151VB</item>
+													<item>STM32L151VC</item>
+													<item>STM32L151VD</item>
+													<item>STM32L151ZC</item>
+													<item>STM32L151ZD</item>
+													<item>STM32L152C6</item>
+													<item>STM32L152C8</item>
+													<item>STM32L152CB</item>
+													<item>STM32L152QC</item>
+													<item>STM32L152QD</item>
+													<item>STM32L152R6</item>
+													<item>STM32L152R8</item>
+													<item>STM32L152RB</item>
+													<item>STM32L152RC</item>
+													<item>STM32L152RD</item>
+													<item>STM32L152V8</item>
+													<item>STM32L152VB</item>
+													<item>STM32L152VC</item>
+													<item>STM32L152VD</item>
+													<item>STM32L152ZC</item>
+													<item>STM32L152ZD</item>
+													<item>STM32L162QD</item>
+													<item>STM32L162RD</item>
+													<item>STM32L162VD</item>
+													<item>STM32L162ZD</item>
+													<item>STM32W108C8</item>
+													<item>STM32W108C8(allowopt.bytes)</item>
+													<item>STM32W108CB</item>
+													<item>STM32W108CB(allowopt.bytes)</item>
+													<item>STM32W108CC</item>
+													<item>STM32W108CC(allowopt.bytes)</item>
+													<item>STM32W108CZ</item>
+													<item>STM32W108CZ(allowopt.bytes)</item>
+													<item>STM32W108HB</item>
+													<item>STM32W108HB(allowopt.bytes)</item>
+													<item>STR710FZ1</item>
+													<item>STR710FZ2</item>
+													<item>STR711FR0</item>
+													<item>STR711FR1</item>
+													<item>STR711FR2</item>
+													<item>STR712FR0</item>
+													<item>STR712FR1</item>
+													<item>STR712FR2</item>
+													<item>STR715FR0</item>
+													<item>STR730FZ1</item>
+													<item>STR730FZ2</item>
+													<item>STR731FV0</item>
+													<item>STR731FV1</item>
+													<item>STR731FV2</item>
+													<item>STR735FZ1</item>
+													<item>STR735FZ2</item>
+													<item>STR736FV0</item>
+													<item>STR736FV1</item>
+													<item>STR736FV2</item>
+													<item>STR750FV0</item>
+													<item>STR750FV1</item>
+													<item>STR750FV2</item>
+													<item>STR751FR0</item>
+													<item>STR751FR1</item>
+													<item>STR751FR2</item>
+													<item>STR752FR0</item>
+													<item>STR752FR1</item>
+													<item>STR752FR2</item>
+													<item>STR755FR0</item>
+													<item>STR755FR1</item>
+													<item>STR755FR2</item>
+													<item>STR755FV0</item>
+													<item>STR755FV1</item>
+													<item>STR755FV2</item>
+													<item>STR910FAM32</item>
+													<item>STR910FAM32(Bootbank:1)</item>
+													<item>STR910FAW32</item>
+													<item>STR910FAW32(Bootbank:1)</item>
+													<item>STR910FAZ32</item>
+													<item>STR910FAZ32(Bootbank:1)</item>
+													<item>STR911FAM42</item>
+													<item>STR911FAM42(Bootbank:1)</item>
+													<item>STR911FAM44</item>
+													<item>STR911FAM44(Bootbank:1)</item>
+													<item>STR911FAM46</item>
+													<item>STR911FAM46(Bootbank:1)</item>
+													<item>STR911FAM47</item>
+													<item>STR911FAM47(Bootbank:1)</item>
+													<item>STR911FAW42</item>
+													<item>STR911FAW42(Bootbank:1)</item>
+													<item>STR911FAW44</item>
+													<item>STR911FAW44(Bootbank:1)</item>
+													<item>STR911FAW46</item>
+													<item>STR911FAW46(Bootbank:1)</item>
+													<item>STR911FAW47</item>
+													<item>STR911FAW47(Bootbank:1)</item>
+													<item>STR911FM32</item>
+													<item>STR911FM32(Bootbank:1)</item>
+													<item>STR911FM42</item>
+													<item>STR911FM42(Bootbank:1)</item>
+													<item>STR911FM44</item>
+													<item>STR911FM44(Bootbank:1)</item>
+													<item>STR911FW32</item>
+													<item>STR911FW32(Bootbank:1)</item>
+													<item>STR911FW42</item>
+													<item>STR911FW42(Bootbank:1)</item>
+													<item>STR911FW44</item>
+													<item>STR911FW44(Bootbank:1)</item>
+													<item>STR912FAW32</item>
+													<item>STR912FAW32(Bootbank:1)</item>
+													<item>STR912FAW42</item>
+													<item>STR912FAW42(Bootbank:1)</item>
+													<item>STR912FAW44</item>
+													<item>STR912FAW44(Bootbank:1)</item>
+													<item>STR912FAW46</item>
+													<item>STR912FAW46(Bootbank:1)</item>
+													<item>STR912FAW47</item>
+													<item>STR912FAW47(Bootbank:1)</item>
+													<item>STR912FAZ42</item>
+													<item>STR912FAZ42(Bootbank:1)</item>
+													<item>STR912FAZ44</item>
+													<item>STR912FAZ44(Bootbank:1)</item>
+													<item>STR912FAZ46</item>
+													<item>STR912FAZ46(Bootbank:1)</item>
+													<item>STR912FAZ47</item>
+													<item>STR912FAZ47(Bootbank:1)</item>
+													<item>STR912FM32</item>
+													<item>STR912FM32(Bootbank:1)</item>
+													<item>STR912FM42</item>
+													<item>STR912FM42(Bootbank:1)</item>
+													<item>STR912FM44</item>
+													<item>STR912FM44(Bootbank:1)</item>
+													<item>STR912FW32</item>
+													<item>STR912FW32(Bootbank:1)</item>
+													<item>STR912FW42</item>
+													<item>STR912FW42(Bootbank:1)</item>
+													<item>STR912FW44</item>
+													<item>STR912FW44(Bootbank:1)</item>
+												</content>
+												<size>97,21</size>
+											</object>
+											<flag>wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP</flag>
+											<border>4</border>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+								<object class="sizeritem">
+									<object class="wxFlexGridSizer">
+										<cols>2</cols>
+										<rows>4</rows>
+										<vgap>2</vgap>
+										<growablecols>0</growablecols>
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_STATICTEXT6">
+												<label>Interface</label>
+											</object>
+											<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxChoice" name="ID_JTAG_SWD">
+												<content>
+													<item>jtag</item>
+													<item>swd</item>
+												</content>
+												<selection>0</selection>
+											</object>
+											<flag>wxRIGHT|wxEXPAND|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_STATICTEXT7">
+												<label>Jtag Speed</label>
+											</object>
+											<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxTextCtrl" name="ID_SPEED" />
+											<flag>wxRIGHT|wxEXPAND|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_STATICTEXT1">
+												<label></label>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>1</option>
+										</object>
+										<object class="sizeritem">
+											<object class="wxCheckBox" name="ID_AUTO_SPEED">
+												<label>Auto speed</label>
+											</object>
+											<flag>wxLEFT|wxRIGHT|wxEXPAND|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_STATICTEXT8">
+												<label>Endianness</label>
+											</object>
+											<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxChoice" name="ID_ENDIANNESS">
+												<content>
+													<item>little</item>
+													<item>big</item>
+												</content>
+												<selection>0</selection>
+											</object>
+											<flag>wxRIGHT|wxEXPAND|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_STATICTEXT9">
+												<label>Reset type</label>
+											</object>
+											<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxChoice" name="ID_RESET_TYPE">
+												<content>
+													<item>0</item>
+													<item>1</item>
+													<item>2</item>
+													<item>3</item>
+													<item>4</item>
+													<item>5</item>
+													<item>6</item>
+													<item>7</item>
+													<item>8</item>
+													<item>9</item>
+													<item>10</item>
+												</content>
+												<selection>0</selection>
+											</object>
+											<flag>wxRIGHT|wxEXPAND|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_STATICTEXT10">
+												<label>Vector table start</label>
+											</object>
+											<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxTextCtrl" name="ID_VECTOR_START" />
+											<flag>wxRIGHT|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP</flag>
+											<border>3</border>
+										</object>
+									</object>
+									<flag>wxEXPAND|wxALIGN_TOP|wxALIGN_CENTER_HORIZONTAL</flag>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBoxSizer">
+										<orient>wxVERTICAL</orient>
+										<object class="sizeritem">
+											<object class="wxCheckBox" name="ID_LOAD_PROGRAM">
+												<label>Load progam</label>
+											</object>
+											<flag>wxTOP|wxLEFT|wxALIGN_LEFT|wxALIGN_TOP</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxCheckBox" name="ID_FLASH_DOWNLOAD">
+												<label>Flash download</label>
+											</object>
+											<flag>wxTOP|wxLEFT|wxALIGN_LEFT|wxALIGN_TOP</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxCheckBox" name="ID_FLASH_BREAK">
+												<label>Flash breakpoints</label>
+											</object>
+											<flag>wxTOP|wxLEFT|wxALIGN_LEFT|wxALIGN_TOP</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxCheckBox" name="ID_RAM_EXEC">
+												<label>Execute from RAM</label>
+												<tooltip>Checkk this box if the program must&#x0A;execute from RAM.</tooltip>
+											</object>
+											<flag>wxTOP|wxLEFT|wxALIGN_LEFT|wxALIGN_TOP</flag>
+											<border>3</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxCheckBox" name="ID_VEC_TABLE">
+												<label>Relocate vector table</label>
+												<tooltip>Relocate the vector table</tooltip>
+											</object>
+											<flag>wxTOP|wxLEFT|wxALIGN_LEFT|wxALIGN_TOP</flag>
+											<border>3</border>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+							</object>
+						</object>
+						<label>Settings</label>
+					</object>
+					<object class="notebookpage">
+						<object class="wxPanel" name="tabExtras">
+							<object class="wxBoxSizer">
+								<orient>wxVERTICAL</orient>
+								<object class="sizeritem">
+									<object class="wxStaticBoxSizer">
+										<label>Non-Cacheable region</label>
+										<orient>wxVERTICAL</orient>
+										<object class="sizeritem">
+											<object class="wxFlexGridSizer">
+												<cols>2</cols>
+												<rows>2</rows>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT14">
+														<label></label>
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxCheckBox" name="ID_NCACHE_CHECK">
+														<label>Disable Cache</label>
+													</object>
+													<flag>wxTOP|wxBOTTOM|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>10</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT13">
+														<label>Base address</label>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="ID_NCACHE_BASE" />
+													<flag>wxTOP|wxBOTTOM|wxLEFT|wxEXPAND|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT15">
+														<label>Length</label>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="ID_NCACHE_LENGTH" />
+													<flag>wxBOTTOM|wxLEFT|wxEXPAND|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+											</object>
+											<flag>wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>15</border>
+									<option>1</option>
+								</object>
+								<object class="spacer">
+									<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+							</object>
+						</object>
+						<label>Flash cache</label>
+					</object>
+					<object class="notebookpage">
+						<object class="wxPanel" name="ID_PANEL1">
+							<object class="wxBoxSizer">
+								<orient>wxVERTICAL</orient>
+								<object class="sizeritem">
+									<object class="wxCheckBox" name="ID_SEMIHOST_CHECK">
+										<label>Enable Semihosting</label>
+									</object>
+									<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>15</border>
+								</object>
+								<object class="sizeritem">
+									<object class="wxStaticBoxSizer">
+										<label>Alternative settings</label>
+										<orient>wxVERTICAL</orient>
+										<object class="sizeritem">
+											<object class="wxFlexGridSizer">
+												<cols>2</cols>
+												<rows>2</rows>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT16">
+														<label>ArmSWI</label>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="ID_ARM_SWI" />
+													<flag>wxTOP|wxBOTTOM|wxLEFT|wxEXPAND|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT17">
+														<label>ThumbSWI</label>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="ID_THUMB_SWI" />
+													<flag>wxBOTTOM|wxLEFT|wxEXPAND|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+											</object>
+											<flag>wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>3</border>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+								<object class="spacer">
+									<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+							</object>
+						</object>
+						<label>Semihosting</label>
+					</object>
+				</object>
+				<flag>wxALIGN_LEFT|wxALIGN_TOP</flag>
+			</object>
+		</object>
+	</object>
+</resource>
