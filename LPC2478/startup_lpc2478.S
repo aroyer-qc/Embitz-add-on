@@ -11,6 +11,7 @@
 
 .global start
 .global Reset_Handler
+.global b_arm
 
 // --------------------------------------------------------------------------------------------------
 // Stack Sizes
@@ -20,7 +21,6 @@
 .set  FIQ_STACK_SIZE, 0x00000040  // stack for "FIQ"
 .set  IRQ_STACK_SIZE, 0X00000100  // stack for "IRQ"
 .set  SVC_STACK_SIZE, 0x00000100  // stack for "SVC"
-.set  USR_STACK_SIZE, 0x00000C00
 
 // --------------------------------------------------------------------------------------------------
 // Standard definitions of Mode bits and Interrupt (I & F) flags in PSRs (program status registers)
@@ -35,6 +35,10 @@
 
 .set  I_BIT, 0x80                 // when I bit is set, IRQ is disabled (program status registers)
 .set  F_BIT, 0x40                 // when F bit is set, FIQ is disabled (program status registers)
+
+    .section .vtable
+     .equ     VTable_Size, 64
+     .space   VTable_Size
 
     .section .stack
     .align 3
@@ -68,10 +72,10 @@ __HeapBase:
 __HeapLimit:
     .size __HeapLimit, . - __HeapLimit
 
-
 .section .vector, "ax"
                   .code 32
                   .align 0
+
 .arm
 .func start
 
@@ -95,6 +99,8 @@ FIQ_Addr:       .word   FIQ_Handler     // FIQ Routine
 
  .size    start, . - start
 .endfunc
+
+b_arm:
 
 // --------------------------------------------------------------------------------------------------
 // Reset Handler
@@ -120,7 +126,7 @@ Reset_Handler:
        sub     r0, r0, #IRQ_STACK_SIZE
        msr     CPSR_c, #MODE_SVC|I_BIT|F_BIT  // Supervisor Mode
        mov     sp, r0
-       sub     r0, r0, #SVC_STACK_SIZE
+       sub     r0, r0, #Stack_Size
        msr     CPSR_c, #MODE_SYS|I_BIT|F_BIT  // User Mode
        mov     sp, r0
 
@@ -148,3 +154,6 @@ Reset_Handler:
 
 .endfunc
 .end
+
+
+// code may also load the saved lr into r0 and then do a "bx r0" instead of "bx lr".
