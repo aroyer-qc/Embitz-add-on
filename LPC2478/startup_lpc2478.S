@@ -152,7 +152,8 @@ Reset_Handler:
        blo     2b
 
        // Enter the C code
-       b       main
+       ldr     R0, =main
+       mov     pc, R0
 
       .size Reset_Handler, . - Reset_Handler
 
