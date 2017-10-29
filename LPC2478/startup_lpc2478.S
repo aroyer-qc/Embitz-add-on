@@ -158,6 +158,3 @@ Reset_Handler:
 
 .endfunc
 .end
-
-
-// code may also load the saved lr into r0 and then do a "bx r0" instead of "bx lr".
