@@ -9,9 +9,13 @@
 // global
 // --------------------------------------------------------------------------------------------------
 
-.global start
+.global Isr_vector
 .global Reset_Handler
 .global b_arm
+.global __StackLimit
+.global __StackTop
+.global __HeapBase
+.global __HeapLimit
 
 // --------------------------------------------------------------------------------------------------
 // Stack Sizes
@@ -36,79 +40,79 @@
 .set  I_BIT, 0x80                 // when I bit is set, IRQ is disabled (program status registers)
 .set  F_BIT, 0x40                 // when F bit is set, FIQ is disabled (program status registers)
 
-    .section .vtable
-     .equ     VTable_Size, 64
-     .space   VTable_Size
+// --------------------------------------------------------------------------------------------------
+// Stack
+// --------------------------------------------------------------------------------------------------
 
-    .section .stack
-    .align 3
+    .section    .stack
+    .align      0
 #ifdef __STACK_SIZE
-    .equ    Stack_Size, __STACK_SIZE
+    .equ        Stack_Size, __STACK_SIZE
 #else
-    .equ    Stack_Size, 0x400
+    .equ        Stack_Size, 0x400
 #endif
-    .globl    __StackTop
-    .globl    __StackLimit
+
 __StackLimit:
-    .space    Stack_Size
-    .size __StackLimit, . - __StackLimit
+    .space      (Stack_Size + (UND_STACK_SIZE + ABT_STACK_SIZE + FIQ_STACK_SIZE + IRQ_STACK_SIZE + SVC_STACK_SIZE))
+    .size       __StackLimit, . - __StackLimit
 __StackTop:
-    .size __StackTop, . - __StackTop
+    .size       __StackTop, . - __StackTop
 
-    .section .heap
-    .align 3
+// --------------------------------------------------------------------------------------------------
+// Heap
+// --------------------------------------------------------------------------------------------------
+
+    .section    .heap
+    .align 0
 #ifdef __HEAP_SIZE
-    .equ    Heap_Size, __HEAP_SIZE
+    .equ        Heap_Size, __HEAP_SIZE
 #else
-    .equ    Heap_Size, 0xC00
+    .equ        Heap_Size, 0xC00
 #endif
-    .globl    __HeapBase
-    .globl    __HeapLimit
 __HeapBase:
-    .if    Heap_Size
-    .space    Heap_Size
+    .if         Heap_Size
+    .space      Heap_Size
     .endif
-    .size __HeapBase, . - __HeapBase
+    .size       __HeapBase, . - __HeapBase
 __HeapLimit:
-    .size __HeapLimit, . - __HeapLimit
+    .size       __HeapLimit, . - __HeapLimit
 
-.section .vector, "ax"
-                  .code 32
-                  .align 0
+// --------------------------------------------------------------------------------------------------
+// ISR Vector
+// --------------------------------------------------------------------------------------------------
 
-.arm
-.func start
+    .section        .isr_vector
+    .align          0
+Isr_vector:
+            ldr     PC, Reset_Addr   // Reset Exception
+            ldr     PC, Undef_Addr   // Undefined Instruction
+            ldr     PC, SWI_Addr     // Software Interrupt
+            ldr     PC, PAbt_Addr    // Prefetch Abort (instruction fetch memory fault)
+            ldr     PC, DAbt_Addr    // Data Abort (data access memory fault)
+            nop
+            Ldr     PC, [PC, #-0x0120]
+            ldr     PC, FIQ_Addr     // FIQ
 
-start: ldr     PC, Reset_Addr   // Reset Exception
-       ldr     PC, Undef_Addr   // Undefined Instruction
-       ldr     PC, SWI_Addr     // Software Interrupt
-       ldr     PC, PAbt_Addr    // Prefetch Abort (instruction fetch memory fault)
-       ldr     PC, DAbt_Addr    // Data Abort (data access memory fault)
-       nop
-       Ldr     PC, [PC, #-0x0120]
-       ldr     PC, FIQ_Addr     // FIQ
+Reset_Addr: .word   Reset_Handler   // Reset Routine
+Undef_Addr: .word   UNDEF_Handler   // Undefined Instruction Interrupt Routine
+SWI_Addr:   .word   SWI_Handler     // Software Interrupt Routine                   // swich contect for nos
+PAbt_Addr:  .word   PAbt_Handler    // Prefetch Abort Interrupt Routine
+DAbt_Addr:  .word   DAbt_Handler    // Data Abort Handler
+            .word   0               // rounds the vectors and ISR addresses to 64 bytes total
+IRQ_Addr:   .word   IRQ_Handler     // IRQ Routine
+FIQ_Addr:   .word   FIQ_Handler     // FIQ Routine
 
-Reset_Addr:     .word   Reset_Handler   // Reset Routine
-Undef_Addr:     .word   UNDEF_Handler   // Undefined Instruction Interrupt Routine
-SWI_Addr:       .word   SWI_Handler     // Software Interrupt Routine                   // swich contect for nos
-PAbt_Addr:      .word   PAbt_Handler    // Prefetch Abort Interrupt Routine
-DAbt_Addr:      .word   DAbt_Handler    // Data Abort Handler
-                .word   0               // rounds the vectors and ISR addresses to 64 bytes total
-IRQ_Addr:       .word   IRQ_Handler     // IRQ Routine
-FIQ_Addr:       .word   FIQ_Handler     // FIQ Routine
-
- .size    start, . - start
-.endfunc
-
-b_arm:
+ .size    Isr_vector, . - Isr_vector
 
 // --------------------------------------------------------------------------------------------------
 // Reset Handler
 // --------------------------------------------------------------------------------------------------
 
-.section .text, "ax"
-.arm
+   .section .text
+   .arm
+   .align 0
 
+b_arm:
 .func Reset_Handler
 Reset_Handler:
        ldr     r0, =__StackTop
@@ -126,7 +130,7 @@ Reset_Handler:
        sub     r0, r0, #IRQ_STACK_SIZE
        msr     CPSR_c, #MODE_SVC|I_BIT|F_BIT  // Supervisor Mode
        mov     sp, r0
-       sub     r0, r0, #Stack_Size
+       sub     r0, r0, #SVC_STACK_SIZE
        msr     CPSR_c, #MODE_SYS|I_BIT|F_BIT  // User Mode
        mov     sp, r0
 

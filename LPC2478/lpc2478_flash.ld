@@ -5,11 +5,11 @@ SEARCH_DIR(.)
 /* Memory Spaces Definitions */
 MEMORY
 {
-    FLASH  (rx)  : ORIGIN = 0x00000000, LENGTH = 504K
-    RAM    (rwx) : ORIGIN = 0x40000000, LENGTH = 64K
-    USBRAM (rwx) : ORIGIN = 0x7FD00000, LENGTH = 8K
-    ETHRAM (rwx) : ORIGIN = 0x7FE00000, LENGTH = 16K
-    SDRAM  (rwx) : ORIGIN = 0xA0000000, LENGTH = 64M
+    FLASH       (rx)  : ORIGIN = 0x00000000, LENGTH = 504K
+    RAM         (rwx) : ORIGIN = 0x40000000, LENGTH = 64K
+    USBRAM      (rwx) : ORIGIN = 0x7FD00000, LENGTH = 8K
+    ETHRAM      (rwx) : ORIGIN = 0x7FE00000, LENGTH = 16K
+    SDRAM       (rwx) : ORIGIN = 0xA0000000, LENGTH = 64M
 }
 
 /* Linker script to place sections and symbol values. Should be used together
@@ -36,18 +36,15 @@ MEMORY
  *   __HeapLimit
  *   __StackLimit
  *   __StackTop
- *   __stack
  */
+
+ ENTRY(Reset_Handler)
 
 SECTIONS
 {
-    .vector :
-    {
-		*(.vector)
-    } > FLASH
-
-    .text :
-    {
+	.text :
+	{
+		KEEP(*(.isr_vector))
 		*(.text*)
 
         *(.text)
@@ -81,19 +78,17 @@ SECTIONS
 		*(.ARM.extab* .gnu.linkonce.armextab.*)
 	} > FLASH
 
-
-    __exidx_start = .;
+   __exidx_start = .;
 	.ARM.extab :
 	{
 		*(.ARM.extab* .gnu.linkonce.armextab.*)
 	} > FLASH
-    __exidx_end = .;
+	__exidx_end = .;
 
-    __etext = .;
-
+	__etext = .;
+		
 	.data : AT (__etext)
 	{
-		. = ALIGN(4);
 		__data_start__ = .;
 		*(vtable)
 		*(.data*)
@@ -125,7 +120,7 @@ SECTIONS
 
 	} > RAM
 
-	.bss (NOLOAD):
+	.bss :
 	{
 		__bss_start__ = .;
 		*(.bss*)
@@ -133,20 +128,21 @@ SECTIONS
 		__bss_end__ = .;
 	} > RAM
 
-	.heap (NOLOAD):
+	
+	.heap :
 	{
 		__end__ = .;
 		end = __end__;
-		*(.heap*)
-		__HeapLimit = .;
+        KEEP(*(.heap*));
 	} > RAM
 
-/* .stack_dummy section doesn't contains any symbols. It is only
+	/* .stack_dummy section doesn't contains any symbols. It is only
 	 * used for linker to calculate size of stack sections, and assign
 	 * values to stack symbols later */
-	.stack_dummy (NOLOAD):
+
+     .stack_dummy :
 	{
-		*(.stack)
+        *(.stack);
 	} > RAM
 
     .usbram (NOLOAD):
@@ -164,18 +160,10 @@ SECTIONS
     } > ETHRAM
 
 
-    /* Set stack top to end of RAM, and stack limit move down by
+     /* Set stack top to end of RAM, and stack limit move down by
 	 * size of stack_dummy section */
-	__StackTop = (ORIGIN(RAM) + LENGTH(RAM)) - 4;
+	__StackTop = ORIGIN(RAM) + LENGTH(RAM);
 	__StackLimit = __StackTop - SIZEOF(.stack_dummy);
-	PROVIDE(__stack = __StackTop);
-
 	/* Check if data + heap + stack exceeds RAM limit */
-	ASSERT(__StackLimit >= __HeapLimit , "region RAM overflowed with stack")
-}
-
-
-
-
-
-
+	ASSERT(__StackLimit >= __HeapLimit, "region RAM overflowed with stack")
+}
